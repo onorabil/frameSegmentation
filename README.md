@@ -2,7 +2,7 @@
 
 Fast, responsive semantic segmentation tool for image sequences.
 
-This tool is part of the code release for the paper **Semi-supervised Segmentation of Aerial Videos with Iterative Label Propagation**, ACCV 2021 oral.
+This tool is part of the code release for the paper **Semi-supervised Segmentation of Aerial Videos with Iterative Label Propagation**, ACCV 2020 oral.
 
 Paper: https://arxiv.org/abs/2010.01910
 
@@ -15,7 +15,7 @@ Project page: https://sites.google.com/site/aerialimageunderstanding/semantics-t
 - can iterate ovverlapping polygon
 - responsive for high resolutions
 - numpy map ouptut with one channel per class
-- customizable classes [ `classConfig.yaml` ] / language [ `languageConfig.yaml` ]
+- customizable classes [ `classConfig.yaml` - mandatory ] / language [ `languageConfig.yaml` - optional ]
 - python / cross platform / executables available for Linux/Windows (tested on Ubuntu 20.04 and Windows 10)
 
 ## Getting started
@@ -41,7 +41,7 @@ pyinstaller -F --noconsole frameSeg.py
 
 ## Video tutorial
 
-TODO
+https://youtu.be/N_xnHNkRd_c
 
 ## Known Issues
 
