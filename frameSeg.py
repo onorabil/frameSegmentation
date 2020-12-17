@@ -116,7 +116,6 @@ NUM_CLASSES = len(CLASS_NAMES)
 # helpers / GUI
 
 def selectOperation():
-    app = wx.App(None)
     # style = wx.YES_NO | wx.ICON_QUESTION | wx.CANCEL | wx.HELP
     style = wx.YES_NO | wx.ICON_QUESTION | wx.CANCEL
     dialog = wx.MessageDialog(None, _('Select operation'), _('Image segmentation'), style)
@@ -140,7 +139,6 @@ def selectOperation():
 
 
 def selectFolder():
-    app = wx.App(None)
     style = wx.DD_DIR_MUST_EXIST | wx.DD_CHANGE_DIR
     # dialog = wx.DirDialog(None, "Please choose image directory", style)
     dialog = wx.DirDialog(None, "Please choose image directory", style=style)
@@ -154,7 +152,6 @@ def selectFolder():
 
 
 def getSingleFilePath(wildcard):
-    app = wx.App(None)
     style = wx.FD_OPEN | wx.FD_FILE_MUST_EXIST
     dialog = wx.FileDialog(None, _('Open image'), wildcard=wildcard, style=style)
     if dialog.ShowModal() == wx.ID_OK:
@@ -1389,6 +1386,8 @@ def loadFile():
 
 
 if __name__ == '__main__':
+    app = wx.App(False)
+
     current_operation = 'segment'  # selectOperation()
     image_path_list = []
 
@@ -1400,11 +1399,6 @@ if __name__ == '__main__':
     IMAGE_EXTENSION = os.path.basename(FILE_PATH).split('.')[-1]
 
     SEG_PATH_OUT = os.path.dirname(FILE_PATH)
-
-
-    print('before app made')
-    app = wx.App(False)
-    print('app made')
 
     # plot previous segmentations
     previousSegemntationPlotThread = threading.Thread(target=plotPreviousSegmentations, args=[SEG_PATH_OUT])
